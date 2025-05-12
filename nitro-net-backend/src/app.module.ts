@@ -13,7 +13,7 @@ import { join } from 'path';
 @Module({
   imports: [AuthModule, PublicModule, CarsModule, SensorsModule, DatabaseModule,
     ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', '..', 'nitronet-login', 'dist'),
+      rootPath: join(__dirname, '..', '..', 'nitro-net-front-login', 'dist'),
       serveRoot: '/',
       exclude: ['/api*'],
     })
