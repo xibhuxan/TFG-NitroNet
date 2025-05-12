@@ -9,8 +9,7 @@ export const DatabaseProviders: Provider[] = [
       user: process.env.NITRONET_DB_USER,
       password: process.env.NITRONET_DB_PASS,
       database: process.env.NITRONET_DB_DATABASE,
-      port: Number(process.env.NITRONET_DB_PORT),
-      connectionLimit: 5,
+      port: Number(process.env.NITRONET_DB_PORT)
     }),
   },
   // Si hay más bases de datos, se ponen aquí
