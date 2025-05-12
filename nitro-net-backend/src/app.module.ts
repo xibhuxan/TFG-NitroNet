@@ -9,9 +9,14 @@ import { AppRepository } from './app.repository';
 import { DatabaseModule } from './database/database.module';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [AuthModule, PublicModule, CarsModule, SensorsModule, DatabaseModule,
+  imports: [
+    ConfigModule.forRoot({
+      isGlobal: true, // Hace que las variables de entorno estén disponibles globalmente
+    }),
+    AuthModule, PublicModule, CarsModule, SensorsModule, DatabaseModule,
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', '..', 'nitro-net-front-login', 'dist'),
       serveRoot: '/',
