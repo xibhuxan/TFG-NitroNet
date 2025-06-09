@@ -5,8 +5,10 @@ import { SensorsRepository } from './sensors.repository';
 import { DatabaseModule } from 'src/database/database.module';
 
 @Module({
-  imports: [DatabaseModule],
+  imports: [
+    DatabaseModule
+  ],
   controllers: [SensorsController],
   providers: [SensorsService, SensorsRepository],
 })
-export class SensorsModule {}
+export class SensorsModule { }

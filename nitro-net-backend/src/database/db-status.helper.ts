@@ -1,6 +1,6 @@
 import { Injectable, Inject } from '@nestjs/common';
 import { Pool } from 'mariadb';
-import { MariaDbHelperService } from './mariadb-helper.dervice';
+import { MariaDbHelperService } from './mariadb-helper.service';
 
 @Injectable()
 export class DbStatusService {

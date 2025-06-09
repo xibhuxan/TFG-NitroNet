@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { DatabaseProviders } from './database.providers';
 import { DbStatusController } from './db-status.controller';
-import { MariaDbHelperService } from './mariadb-helper.dervice';
+import { MariaDbHelperService } from './mariadb-helper.service';
 import { DbStatusService } from './db-status.helper';
 
 @Module({
