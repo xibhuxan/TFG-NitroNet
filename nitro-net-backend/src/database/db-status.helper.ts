@@ -6,7 +6,6 @@ import { MariaDbHelperService } from './mariadb-helper.service';
 export class DbStatusService {
     constructor(
         @Inject('NITRONET_DB') private readonly nitronetDb: Pool,
-        //@Inject('OTRA_DB') private readonly otraDb: Pool,
         private readonly dbHelper: MariaDbHelperService,
     ) { }
 
@@ -14,15 +13,5 @@ export class DbStatusService {
         const nitronet = await this.dbHelper.ping(this.nitronetDb);
         return { nitronet };
     }
-
-    /*
-    async getStatus(): Promise<{ nitronet: boolean; otra: boolean }> {
-        const [nitronet, otra] = await Promise.all([
-        this.dbHelper.ping(this.nitronetDb),
-        this.dbHelper.ping(this.otraDb),
-        ]);
-        return { nitronet, otra };
-    }
-    */
 
 }

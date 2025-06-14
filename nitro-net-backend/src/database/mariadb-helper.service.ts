@@ -24,8 +24,6 @@ export class MariaDbHelperService {
         }
     }
 
-    //const values = items.map(item => [item.val1, item.val2]);
-    //const users = [[1, 'Juan'], [2, 'Ana'], [3, 'Luis']];
     async batch(pool: Pool, sql: string, paramsArray: any[][], transaction = false): Promise<OkPacket[]> {
         if (transaction) {
             return await this.transaction(pool, async (conn) => {

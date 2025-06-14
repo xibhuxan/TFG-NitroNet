@@ -12,5 +12,4 @@ export const DatabaseProviders: Provider[] = [
       port: Number(process.env.NITRONET_DB_PORT)
     }),
   },
-  // Si hay más bases de datos, se ponen aquí
 ];
