@@ -14,6 +14,31 @@ export class AuthRepository {
     private readonly dbHelper: MariaDbHelperService,
   ) { }
 
+   async getUserCarAndSensors(userId: number) {
+    const query = `
+      SELECT 
+        u.id AS usuario_id,
+        c.id AS coche_id,
+        c.nombre,
+        c.modelo,
+        c.cc,
+        e.valor AS escala,
+        sc.id AS id_sensor_coche,
+        s.tipo,
+        s.nombre AS sensor_nombre,
+        s.unidad,
+        sc.ubicacion
+      FROM usuarios u
+      JOIN coches c ON u.id_coche = c.id
+      LEFT JOIN escalas e ON c.id_escala = e.id
+      JOIN sensores_coche sc ON sc.id_coche = c.id
+      JOIN sensores s ON s.id = sc.id_sensor
+      WHERE u.id = ?
+    `;
+    const result = await this.dbHelper.select(this.nitronetDb, query, [userId]);
+    return result;
+  }
+
   // ---------- USUARIOS ----------
   async createUser(usuario: CreateUsuarioDto) {
     const query = `

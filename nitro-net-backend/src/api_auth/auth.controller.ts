@@ -65,6 +65,11 @@ export class AuthController {
     return { message: 'Logout exitoso' };
   }
 
+  @Get('init/:id')
+  async getInitialData(@Param('id', ParseIntPipe) id: number) {
+    return this.authService.getInitialUserData(id);
+  }
+
   // Usuarios
   @Post('usuarios')
   @ApiOperation({ summary: 'Crear nuevo usuario' })

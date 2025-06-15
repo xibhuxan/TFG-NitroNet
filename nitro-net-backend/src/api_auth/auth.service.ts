@@ -16,6 +16,34 @@ export class AuthService {
     private readonly authRepository: AuthRepository,
   ) { }
 
+    async getInitialUserData(userId: number) {
+    const data = await this.authRepository.getUserCarAndSensors(userId);
+
+    if (!data || data.length === 0) {
+      throw new NotFoundException('Usuario o coche no encontrado');
+    }
+
+    const base = data[0];
+
+    return {
+      usuario_id: base.usuario_id,
+      coche: {
+        id: base.coche_id,
+        nombre: base.nombre,
+        modelo: base.modelo,
+        cc: parseFloat(base.cc),
+        escala: base.escala
+      },
+      sensores: data.map(row => ({
+        id_sensor_coche: row.id_sensor_coche,
+        tipo: row.tipo,
+        nombre: row.sensor_nombre,
+        unidad: row.unidad,
+        ubicacion: row.ubicacion
+      }))
+    };
+  }
+
   async validarUsuario(dto: LoginDto): Promise<ResponseUsuarioDto> {
     const user = await this.authRepository.getUserByUsername(dto.username);
 
