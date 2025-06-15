@@ -1,0 +1,35 @@
+# PlatformIO generated files
+.pio/
+.pioenvs/
+.pio/libdeps/
+.pio/build/
+.pio/.cache/
+
+# Compiled object files and executables
+*.elf
+*.bin
+*.hex
+*.map
+*.exe
+
+# Project-specific files
+.vscode/
+.clang_complete
+.idea/
+
+# Python virtual environment (si usas uno localmente)
+venv/
+env/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Backup or temp files
+*.swp
+*.bak
+*.tmp
+*.log
+
+# PlatformIO configuration override
+platformio_override.ini
