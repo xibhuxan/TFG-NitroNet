@@ -46,7 +46,7 @@ Si necesitas conocer las APIs entra en `http://localhost:3000/api`
 
 ### Sistema operativo
 
-El sistema está pensado para usarse en **Raspberry Pi OS** (64 bits con entorno de escritorio), aunque también es compatible con cualquier otra distribución Linux. Para comodidad y accesibilidad, se recomienda usar una imagen personalizada preconfigurada.
+El sistema está pensado para usarse en **Raspberry Pi OS** (64 bits con entorno de escritorio), aunque también es compatible con cualquier otra distribución Linux.
 
 Si prefieres hacerlo manualmente:
 
@@ -98,18 +98,14 @@ cd backend && npm install
 cd ../frontend && npm install
 ```
 
-### Script de automatización
-
-(Próximamente: script `.sh` para automatizar la instalación y configuración completa)
-
 ---
 
 ## 🎓 Requisitos recomendados (hardware)
 
-* Raspberry Pi 5 (con carcasa Argon ONE V3 con soporte M.2)
-* SSD M.2
+* Raspberry Pi 5
+* microSD alta velocidad
 * Monitor, teclado y ratón para la configuración inicial
-* Conexión Wi-Fi o Ethernet
+* Conexión Ethernet
 
 ---
 
